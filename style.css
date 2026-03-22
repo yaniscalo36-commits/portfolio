@@ -435,3 +435,21 @@ section {
     width: 100%;
   }
 }
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px; /* espace entre les 2 blocs */
+  margin-top: 60px;
+}
+
+.contact-left {
+  line-height: 1.8; /* espace entre les lignes */
+}
+
+.contact-item {
+  margin-bottom: 15px; /* espace entre chaque ligne */
+}
+
+.contact-card {
+  padding: 40px;
+}
