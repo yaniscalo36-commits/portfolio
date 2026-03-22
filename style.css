@@ -337,3 +337,55 @@ section {
 .project-btn:hover {
   transform: translateY(-3px);
 }
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 20px;
+  }
+
+  .right img {
+    width: 220px;
+    margin-top: 30px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 20px;
+  }
+
+  /* SKILLS */
+  .skills-box {
+    padding: 30px;
+  }
+
+  /* CONTACT */
+  .contact-container {
+    flex-direction: column;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
