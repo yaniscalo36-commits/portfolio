@@ -512,3 +512,47 @@ section {
     width: 100%;
   }
 }
+.about-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.progression {
+  flex: 1;
+  min-width: 250px;
+}
+
+.progression h3 {
+  margin-bottom: 15px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-left: 3px solid #444;
+  opacity: 0.7;
+}
+
+.step.done {
+  border-left: 3px solid #00ff88;
+  opacity: 1;
+}
+
+.step.active {
+  border-left: 3px solid #00aaff;
+  opacity: 1;
+}
+
+.step span {
+  font-size: 18px;
+}
+
+.about-text {
+  flex: 2;
+  min-width: 300px;
+}
