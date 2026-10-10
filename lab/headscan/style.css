@@ -85,3 +85,4 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; letter-spacing: -1px;
   .scan-form { flex-direction: column; }
   .result-head { flex-direction: column-reverse; align-items: flex-start; }
 }
+.http-note { margin-top: 12px; font-size: 13.5px; color: var(--warn); max-width: 640px; }

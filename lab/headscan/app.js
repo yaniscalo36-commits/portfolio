@@ -7,6 +7,7 @@ const els = {
   form: $("form"), url: $("url"), go: $("go"), status: $("status"), result: $("result"),
   finalUrl: $("final-url"), meta: $("meta"), pills: $("pills"), grade: $("grade"),
   letter: $("grade-letter"), score: $("grade-score"), findings: $("findings"), dl: $("dl-json"),
+  httpNote: $("http-note"),
 };
 
 const ICONS = { "ok": "✔", "attention": "!", "échec": "✘", "info": "i" };
@@ -48,7 +49,11 @@ async function scan(raw) {
     try {
       data = await res.json();
     } catch {
-      throw new Error("réponse inattendue du serveur (" + res.status + ")");
+      // Pas de JSON : la fonction serveur n'existe pas ici (aperçu local, sans Vercel) ou est indisponible.
+      if (res.status === 404) {
+        throw new Error("le service d'analyse ne fonctionne que sur le site en ligne : portfolio-ten-khaki-63.vercel.app/lab/headscan/");
+      }
+      throw new Error("service d'analyse momentanément indisponible (" + res.status + "), réessayez dans un instant");
     }
     if (!res.ok) throw new Error(data.error || "erreur " + res.status);
     show(data);
@@ -70,6 +75,15 @@ function show(r) {
   els.letter.textContent = r.grade;
   els.score.textContent = r.score + "/100";
   els.grade.className = "grade " + (/^A/.test(r.grade) ? "good" : /^[BC]$/.test(r.grade) ? "mid" : "bad");
+
+  // Un code 4xx/5xx signifie souvent que le site bloque les robots : on analyse alors la page de refus.
+  if (r.statusCode >= 400) {
+    els.httpNote.textContent = `Le site a répondu ${r.statusCode}${r.statusCode === 403 ? " (accès refusé)" : ""} : il bloque peut-être les outils automatiques. ` +
+      "L'analyse porte sur les en-têtes de cette réponse, qui sont en général les mêmes que pour un visiteur.";
+    els.httpNote.hidden = false;
+  } else {
+    els.httpNote.hidden = true;
+  }
 
   const count = s => r.findings.filter(f => f.status === s).length;
   els.pills.replaceChildren(
