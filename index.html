@@ -3,496 +3,402 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yanis Calonge | Portfolio</title>
+  <title>Yanis Calonge | Portfolio Cybersécurité</title>
+  <meta name="description" content="Portfolio de Yanis Calonge, étudiant en Bachelor 2 Cybersécurité à Ynov Toulouse. Projets, compétences et contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="stars"></div>
+  <canvas id="grid-bg" aria-hidden="true"></canvas>
 
   <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">Y.CALONGE</div>
-    <nav>
-      <a href="#home">Accueil</a>
-      <a href="#about">À propos</a>
-      <a href="#skills">Compétences</a>
-      <a href="#projects">Projets</a>
-      <a href="#contact">Contact</a>
+  <header class="navbar" id="navbar">
+    <a href="#home" class="logo"><span class="prompt">~/</span>y.calonge<span class="cursor">_</span></a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="nav-menu">
+      <a href="#about"><span class="num">01.</span> À propos</a>
+      <a href="#skills"><span class="num">02.</span> Compétences</a>
+      <a href="#projects"><span class="num">03.</span> Projets</a>
+      <a href="#contact"><span class="num">04.</span> Contact</a>
+      <a href="CV_Yanis_Calonge.pdf" download class="nav-cv">CV</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="left">
-     <p class="intro">Étudiant en Cybersécurité</p>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="status-dot"></span> Recherche de stage — B2 Cybersécurité</p>
 
-<h1>Yanis <span>Calonge</span></h1>
+        <h1>Yanis <span class="accent">Calonge</span></h1>
 
-<h2>Bachelor 2 Cybersécurité — Ynov Toulouse</h2>
+        <p class="role">
+          <span class="mono">&gt;</span> <span id="typed"></span><span class="caret">|</span>
+        </p>
 
-<p class="description">
-Étudiant en deuxième année de Bachelor Cybersécurité à Ynov Toulouse.
-Je développe mes compétences en sécurité offensive et défensive,
-administration systèmes et réseaux, virtualisation, développement et
-analyse des vulnérabilités à travers des projets académiques et personnels.
-Ce portfolio présente mon évolution et les projets qui accompagnent mon parcours.
-</p>
-      <div class="buttons">
-        <a href="#projects" class="primary">Voir mes projets</a>
-       <a href="CV_Yanis_Calonge.pdf" download class="secondary">
-  Télécharger mon CV
-</a>
-      </div>
-    </div>
+        <p class="description">
+          Étudiant en deuxième année de Bachelor Cybersécurité à Ynov Toulouse.
+          Je développe mes compétences en sécurité offensive et défensive,
+          administration systèmes et réseaux, virtualisation, développement et
+          analyse de vulnérabilités, à travers des projets académiques et personnels.
+        </p>
 
-    <div class="right">
-      <img src="images/profile.png" alt="Photo Yanis Calonge">
-    </div>
-  </section>
-
-  <!-- A PROPOS -->
-<section id="about" class="about">
-  <h2>À propos de moi</h2>
-
-  <div class="about-container">
-
-    <!-- PROGRESSION -->
-    <div class="progression">
-      <h3>Mon parcours</h3>
-
-      <div class="step done">
-        <span>✔</span>
-        <p>Bac STI2D (obtenu)</p>
-      </div>
-
-      <div class="step done">
-        <span>✔</span>
-        <p>Bachelor 1 Informatique / Cybersécurité</p>
-      </div>
-
-      <div class="step active">
-        <span>⏳</span>
-        <p>Bachelor 2 Cybersécurité (en cours)</p>
-      </div>
-    </div>
-
-    <!-- TEXTE -->
-    <div class="about-text">
-      <p>
-        J’ai commencé ma  première année Bachelor en informatique (tronc commun),
-        ce qui m’a permis de découvrir plusieurs domaines comme le développement,
-        les systèmes et les réseaux ...
-      </p>
-
-      <p>
-        La cybersécurité m’a particulièrement intéressé.
-        J’aime le côté logique, l’analyse et le fait de comprendre comment
-        les systèmes fonctionnent, et comment les protéger.
-      </p>
-
-      <p>
-        Autour de ce thème, je commence le développement de projets personnels,
-        que vous pouvez retrouver dans ce portfolio.
-      </p>
-
-      <p>
-        je suis une personne de tempérament curieuse qui aime relever des défis.
-        Je joue au jeux vidéos, aux échecs, aux jeux de société.
-        je suis sportif, j'écoute de la musique et j'aime les voyages.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-  </div>
-</section>
-
-  <!-- COMPETENCES -->
-  <section id="skills" class="skills">
-    <div class="skills-header">
-      <h2>Compétences</h2>
-      <p>Technologies et outils utilisés dans mes projets.</p>
-    </div>
-
-    <div class="skills-box">
-
-      <h3 class="skills-category">Développement & Programmation</h3>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>Go (Golang)</h4>
-          <p>Algorithmie, structuration de projets et logique métier.</p>
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+          <a href="CV_Yanis_Calonge.pdf" download class="btn btn-ghost">Télécharger mon CV ↓</a>
         </div>
 
-        <div class="skill-card">
-          <h4>C#</h4>
-          <p>Programmation orientée objet et développement d’applications.</p>
-        </div>
-
-        <div class="skill-card">
-          <h4>JavaScript</h4>
-          <p>Manipulation du DOM et interactions dynamiques.</p>
-        </div>
-
-        <div class="skill-card">
-          <h4>HTML / CSS</h4>
-          <p>Création d’interfaces modernes et responsive.</p>
-        </div>
-      </div>
-
-      <h3 class="skills-category">Bases de données</h3>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>SQL</h4>
-          <p>Modélisation et gestion de bases relationnelles.</p>
-        </div>
-      </div>
-
-      <h3 class="skills-category">Réseaux & Infrastructure</h3>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>Configuration Réseau</h4>
-          <p>Mise en place de VLAN, DHCP et configuration d’équipements Cisco.</p>
-        </div>
-
-        <div class="skill-card">
-          <h4>Infrastructure</h4>
-          <p>Notions d’architecture réseau et segmentation.</p>
-        </div>
-      </div>
-
-      <h3 class="skills-category">Systèmes & Administration</h3>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>Administration Poste Client</h4>
-          <p>Installation et configuration d’environnements utilisateurs.</p>
-        </div>
-
-        <div class="skill-card">
-          <h4>Machines Virtuelles</h4>
-          <p>Utilisation et gestion de machines virtuelles sous Linux.</p>
-        </div>
-
-        <div class="skill-card">
-          <h4>Linux</h4>
-          <p>Manipulation du système et commandes de base.</p>
-        </div>
-      </div>
-
-      <h3 class="skills-category">Outils & Environnements</h3>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>Git & GitHub</h4>
-          <p>Gestion de versions et travail collaboratif.</p>
-        </div>
-
-        <div class="skill-card">
-          <h4>VS Code & IntelliJ</h4>
-          <p>Environnements de développement configurés.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROJETS -->
-  <section id="projects" class="projects">
-    <h2>Mes Projets en B1</h2>
-    <p class="projects-subtitle">
-      Projets académiques et personnels réalisés durant ma formation de B1 à Ynov campus.
-    </p>
-
-    <div class="projects-grid">
-
-      <!-- RPG TOUR PAR TOUR -->
-      <div class="project-card">
-        <img src="images/rpg.png" alt="RPG tour par tour en Go" class="project-img">
-
-        <div class="project-content">
-          <h3> RPG Tour par Tour</h3>
-          <p>
-            Jeu en terminal développé en Go avec système de combat, progression
-            du personnage, gestion d’inventaire et logique de jeu tour par tour.
-          </p>
-
-          <div class="project-tags">
-            <span>Go</span>
-            <span>Terminal</span>
-            <span>Algorithmie</span>
-          </div>
-
-          <a href="#" target="_blank" class="project-btn">Voir le code →</a>
-        </div>
-      </div>
-
-      <!-- PUISSANCE 4 -->
-      <div class="project-card">
-        <img src="images/puissance4.png" alt="Puissance 4" class="project-img">
-
-        <div class="project-content">
-          <h3> Puissance 4</h3>
-          <p>
-            Projet de jeu Puissance 4 combinant Go, HTML et CSS,
-            avec gestion des règles, détection des victoires et interface visuelle.
-          </p>
-
-          <div class="project-tags">
-            <span>Go</span>
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-
-          <a href="#" target="_blank" class="project-btn">Voir le code →</a>
-        </div>
-      </div>
-
-      <!-- GROUPIE VIBES -->
-      <div class="project-card">
-        <img src="images/groupievibes.png" alt="Groupie Vibes" class="project-img">
-
-        <div class="project-content">
-          <h3> Groupie Vibes</h3>
-          <p>
-            Application web développée en Go avec HTML et CSS,
-            centrée sur l’affichage et la structuration de données musicales.
-          </p>
-
-          <div class="project-tags">
-            <span>Go</span>
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-
-          <a href="https://github.com/yaniscalo36-commits/Groupie-Tracker-Yanis-Othmane.git" target="_blank" class="project-btn">
-            Voir le code →
-          </a>
-        </div>
-      </div>
-
-      <!-- ZOO -->
-      <div class="project-card">
-        <img src="images/zoo.png" alt="Zoo Simulator" class="project-img">
-
-        <div class="project-content">
-          <h3> Zoo Simulator</h3>
-          <p>
-            Simulation de gestion d’un zoo développée en C#,
-            avec gestion des animaux, des ressources et logique métier.
-          </p>
-
-          <div class="project-tags">
-            <span>C#</span>
-            <span>Simulation</span>
-            <span>POO</span>
-          </div>
-
-          <a href="https://github.com/yaniscalo36-commits/zoo-simulator.git" target="_blank" class="project-btn">
-            Voir le code →
-          </a>
-        </div>
-      </div>
-
-      <!-- NETFLIXLIGHT -->
-      <div class="project-card">
-        <img src="images/netflixlight.png" alt="NetflixLight" class="project-img">
-
-        <div class="project-content">
-          <h3> NetflixLight</h3>
-          <p>
-            Projet en cours de développement autour d’une interface inspirée
-            des plateformes de streaming, avec travail sur le design et la structure.
-          </p>
-
-          <div class="project-tags">
-            <span>En cours</span>
-            <span>UI</span>
-            <span>Web</span>
-          </div>
-
-          <a href="#" target="_blank" class="project-btn">Voir le code →</a>
-        </div>
-      </div>
-      <!-- PROJET FUSEE JAVA -->
-<div class="project-card">
-  <img src="images/rocket.png" alt="Projet Fusée Java" class="project-img">
-
-  <div class="project-content">
-    <h3> Projet Fusée Java</h3>
-    <p>
-      Projet en Java autour d’une simulation de fusée.
-      Gestion de la logique de lancement, des états de vol et des événements,
-      avec une approche orientée objet (POO).
-    </p>
-
-    <div class="project-tags">
-      <span>Java</span>
-      <span>POO</span>
-      <span>Simulation</span>
-    </div>
-
-    <a href="https://github.com/yaniscalo36-commits/Projet-JAVA.git" target="_blank" class="project-btn">
-      Voir le code →
-    </a>
-  </div>
-</div>
-<!-- PROJET PENDU EN C -->
-<div class="project-card">
-  <img src="images/pendu.png" alt="Jeu du Pendu en C" class="project-img">
-
-  <div class="project-content">
-    <h3> Jeu du Pendu (C)</h3>
-    <p>
-      Projet réalisé en langage C (compilé) consistant à recréer le jeu du pendu en console.
-      Gestion des entrées utilisateur, boucle de jeu, conditions et logique de validation des lettres.
-    </p>
-
-    <div class="project-tags">
-      <span>C</span>
-      <span>Langage compilé</span>
-      <span>Console</span>
-      <span>Algorithmie</span>
-    </div>
-
-    <a href="https://github.com/Redaskz/Langage-compil-.git" target="_blank" class="project-btn">
-      Voir le code →
-    </a>
-  </div>
-</div>
-<!-- PROJET FORUM DE FOOT -->
-<div class="project-card">
-  <img src="images/forum-foot.png" alt="Forum de foot" class="project-img">
-
-  <div class="project-content">
-    <h3> Forum de Foot</h3>
-    <p>
-      Projet de développement d’un forum communautaire autour du football.
-      Gestion des utilisateurs, création de posts, échanges entre membres
-      et structuration des discussions.
-    </p>
-
-    <div class="project-tags">
-      <span>Web</span>
-      <span>Forum</span>
-      <span>Travail d’équipe</span>
-      <span>Base de données</span>
-    </div>
-
-    <a href="https://github.com/Redaskz/ProjJS.2-Forum.git" target="_blank" class="project-btn">
-      Voir le code →
-    </a>
-  </div>
-</div>
-<!-- PROJET SITE BDE YNOV -->
-<div class="project-card">
-  <img src="images/bde-ynov.png" alt="Site BDE Ynov Toulouse" class="project-img">
-
-  <div class="project-content">
-    <h3> Site BDE Ynov Toulouse</h3>
-    <p>
-      Projet de création d’un site web pour le Bureau des Étudiants (BDE) de Ynov Toulouse.
-      Plateforme destinée à présenter la vie étudiante, les événements et renforcer la communication entre étudiants.
-    </p>
-
-    <div class="project-tags">
-      <span>Web</span>
-      <span>UI/UX</span>
-      <span>Travail d’équipe</span>
-      <span>Projet école</span>
-    </div>
-
-    <a href="https://github.com/maelleagondjodondia/Ynot-siteweb.git" target="_blank" class="project-btn">
-      Voir le code →
-    </a>
-  </div>
-</div>
-
-    </div>
-  </section>
-   <section id="projects" class="projects">
-    <h2>Mes Projets en B2</h2>
-    <p class="projects-subtitle">
-      Projets académiques et personnels réalisés durant ma formation de B2 à Ynov campus.
-    
-    </p>
-    </section>
-   <section id="projects" class="projects">
-    <h2>Mes Projets personnels</h2>
-    <p class="projects-subtitle">
-      Ce ne sont pas des projets académiques, mais des projets que j’ai réalisés par curiosité ou pour m’améliorer dans certains domaines.
-    
-    </p>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="contact-header">
-      <h2>Contact</h2>
-      <p>À la recherche d’un stage en informatique pour ma deuxième année.</p>
-    </div>
-
-    <div class="contact-container">
-      <div class="contact-left">
-
-        <div class="contact-item">
-          <strong>Email :</strong>
-          <a href="mailto:yanis.calonge@laposte.net">
-            yanis.calonge@laposte.net
-          </a>
-        </div>
-
-        <div class="contact-item">
-          <strong>Téléphone :</strong>
-          <a href="tel:0749503177">07 49 50 31 77</a>
-        </div>
-
-        <div class="contact-item">
-          <strong>GitHub :</strong>
-          <a href="https://github.com/yaniscalo36-commits" target="_blank">
-            github.com/yaniscalo36-commits
-          </a>
-        </div>
-
-        <div class="contact-item">
-          <strong>Localisation :</strong>
-          Toulouse, France
-        </div>
-
-      </div>
-
-      <div class="contact-card">
-        <h3>Objectif :</h3>
-        <ul>
-          <li>Stage en informatique (2e année) au vu d'une alternance en 3e année potentiellement</li>
-          <li>Découverte du travail en entreprise</li>
-          <li>Développement de compétences </li>
+        <ul class="hero-meta">
+          <li><span class="mono">loc</span> Toulouse, France</li>
+          <li><span class="mono">edu</span> Ynov Campus</li>
+          <li><span class="mono">git</span> <a href="https://github.com/yaniscalo36-commits" target="_blank" rel="noopener">yaniscalo36-commits</a></li>
         </ul>
-
-        <a href="mailto:yanis.calonge@laposte.net" class="contact-button">
-          Me contacter
-        </a>
       </div>
-    </div>
-  </section>
+
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <img src="images/profile.png" alt="Photo de Yanis Calonge">
+          <span class="corner tl"></span><span class="corner tr"></span>
+          <span class="corner bl"></span><span class="corner br"></span>
+        </div>
+
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <p>yanis@ynov:~</p>
+          </div>
+          <pre><code><span class="t-prompt">$</span> whoami
+yanis_calonge
+<span class="t-prompt">$</span> cat focus.txt
+<span class="t-accent">[+]</span> sécurité offensive &amp; défensive
+<span class="t-accent">[+]</span> réseaux &amp; systèmes
+<span class="t-accent">[+]</span> développement</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <span class="section-num">01.</span>
+        <h2>À propos de moi</h2>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            J’ai commencé ma première année de Bachelor en informatique (tronc commun),
+            ce qui m’a permis de découvrir plusieurs domaines : le développement,
+            les systèmes et les réseaux.
+          </p>
+          <p>
+            La <strong>cybersécurité</strong> m’a particulièrement intéressé.
+            J’aime le côté logique, l’analyse et le fait de comprendre comment
+            les systèmes fonctionnent — et comment les protéger.
+          </p>
+          <p>
+            Autour de ce thème, je développe des projets personnels que vous pouvez
+            retrouver dans ce portfolio.
+          </p>
+          <p>
+            De tempérament curieux, j’aime relever des défis. En dehors des cours :
+            jeux vidéo, échecs, jeux de société, sport, musique et voyages.
+          </p>
+
+          <ul class="interests">
+            <li>♟ Échecs</li>
+            <li>🎮 Jeux vidéo</li>
+            <li>🎲 Jeux de société</li>
+            <li>🏃 Sport</li>
+            <li>🎧 Musique</li>
+            <li>✈ Voyages</li>
+          </ul>
+        </div>
+
+        <div class="timeline">
+          <h3 class="mono-title">// parcours</h3>
+
+          <div class="tl-item done">
+            <span class="tl-dot"></span>
+            <p class="tl-label">Obtenu</p>
+            <h4>Bac STI2D</h4>
+          </div>
+
+          <div class="tl-item done">
+            <span class="tl-dot"></span>
+            <p class="tl-label">Validé · Ynov Toulouse</p>
+            <h4>Bachelor 1 Informatique</h4>
+            <p>Tronc commun : dev, systèmes, réseaux.</p>
+          </div>
+
+          <div class="tl-item active">
+            <span class="tl-dot"></span>
+            <p class="tl-label">En cours · Ynov Toulouse</p>
+            <h4>Bachelor 2 Cybersécurité</h4>
+            <p>Sécurité offensive/défensive, infra, vulnérabilités.</p>
+          </div>
+
+          <div class="tl-item next">
+            <span class="tl-dot"></span>
+            <p class="tl-label">Objectif</p>
+            <h4>Bachelor 3 en alternance</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <span class="section-num">02.</span>
+        <h2>Compétences</h2>
+        <span class="section-line"></span>
+      </div>
+      <p class="section-sub">Technologies et outils utilisés dans mes projets.</p>
+
+      <div class="skills-grid">
+        <article class="skill-group">
+          <div class="skill-icon">&lt;/&gt;</div>
+          <h3>Développement</h3>
+          <ul>
+            <li><strong>Go</strong><span>Algorithmie, structuration de projets, logique métier</span></li>
+            <li><strong>C#</strong><span>POO, développement d’applications</span></li>
+            <li><strong>Java</strong><span>POO, simulation</span></li>
+            <li><strong>C</strong><span>Langage compilé, programmes console</span></li>
+            <li><strong>JavaScript</strong><span>DOM, interactions dynamiques</span></li>
+            <li><strong>HTML / CSS</strong><span>Interfaces modernes et responsive</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-group">
+          <div class="skill-icon">⇄</div>
+          <h3>Réseaux &amp; Infra</h3>
+          <ul>
+            <li><strong>Cisco</strong><span>Configuration d’équipements, Packet Tracer</span></li>
+            <li><strong>VLAN / DHCP</strong><span>Mise en place et segmentation</span></li>
+            <li><strong>Architecture</strong><span>Notions de conception réseau</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-group">
+          <div class="skill-icon">$_</div>
+          <h3>Systèmes</h3>
+          <ul>
+            <li><strong>Linux</strong><span>Manipulation du système, ligne de commande</span></li>
+            <li><strong>Virtualisation</strong><span>VMware, gestion de machines virtuelles</span></li>
+            <li><strong>Poste client</strong><span>Installation et configuration d’environnements</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-group">
+          <div class="skill-icon">⛁</div>
+          <h3>Données &amp; Outils</h3>
+          <ul>
+            <li><strong>SQL</strong><span>Modélisation, bases relationnelles, SQLite</span></li>
+            <li><strong>Git &amp; GitHub</strong><span>Versioning, travail collaboratif</span></li>
+            <li><strong>Docker</strong><span>Conteneurisation d’environnements</span></li>
+            <li><strong>VS Code / IntelliJ</strong><span>Environnements de développement</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projects" class="section">
+      <div class="section-head">
+        <span class="section-num">03.</span>
+        <h2>Projets</h2>
+        <span class="section-line"></span>
+      </div>
+      <p class="section-sub">Projets académiques et personnels réalisés pendant ma formation à Ynov Campus.</p>
+
+      <div class="filters" role="tablist" aria-label="Filtrer les projets">
+        <button class="filter active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+        <button class="filter" data-filter="b1" role="tab" aria-selected="false">B1</button>
+        <button class="filter" data-filter="b2" role="tab" aria-selected="false">B2</button>
+        <button class="filter" data-filter="perso" role="tab" aria-selected="false">Perso</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- RPG TOUR PAR TOUR -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb placeholder"><span>&gt; go run rpg.go<br>[HP 100/100] ⚔</span></div>
+          <div class="project-body">
+            <span class="project-year">B1</span>
+            <h3>RPG Tour par Tour</h3>
+            <p>Jeu en terminal développé en Go : système de combat, progression du personnage, gestion d’inventaire et logique tour par tour.</p>
+            <ul class="tags"><li>Go</li><li>Terminal</li><li>Algorithmie</li></ul>
+          </div>
+        </article>
+
+        <!-- PUISSANCE 4 -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb placeholder"><span>● ○ ● ○<br>○ ● ● ●<br>● ○ ○ ●</span></div>
+          <div class="project-body">
+            <span class="project-year">B1</span>
+            <h3>Puissance 4</h3>
+            <p>Jeu Puissance 4 combinant Go, HTML et CSS : gestion des règles, détection des victoires et interface visuelle.</p>
+            <ul class="tags"><li>Go</li><li>HTML</li><li>CSS</li></ul>
+          </div>
+        </article>
+
+        <!-- GROUPIE VIBES -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb"><img src="images/groupievibes.png" alt="Capture de Groupie Vibes" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">B1</span>
+            <h3>Groupie Vibes</h3>
+            <p>Application web en Go avec HTML et CSS, centrée sur l’affichage et la structuration de données musicales issues d’une API.</p>
+            <ul class="tags"><li>Go</li><li>API</li><li>HTML/CSS</li></ul>
+            <a href="https://github.com/yaniscalo36-commits/Groupie-Tracker-Yanis-Othmane" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
+          </div>
+        </article>
+
+        <!-- ZOO -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb"><img src="images/zoo.png" alt="Capture de Zoo Simulator" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">B1</span>
+            <h3>Zoo Simulator</h3>
+            <p>Simulation de gestion d’un zoo en C# : gestion des animaux, des ressources et logique métier en programmation orientée objet.</p>
+            <ul class="tags"><li>C#</li><li>POO</li><li>Simulation</li></ul>
+            <a href="https://github.com/yaniscalo36-commits/zoo-simulator" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
+          </div>
+        </article>
+
+        <!-- NETFLIXLIGHT -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb"><img src="images/netflixlight.png" alt="Capture de NetflixLight" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">B1 · En cours</span>
+            <h3>NetflixLight</h3>
+            <p>Interface inspirée des plateformes de streaming, avec un travail sur le design, la structure et l’expérience utilisateur.</p>
+            <ul class="tags"><li>Web</li><li>UI</li><li>JavaScript</li></ul>
+          </div>
+        </article>
+
+        <!-- FUSEE JAVA -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb"><img src="images/rocket.png" alt="Illustration du projet Fusée" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">B1</span>
+            <h3>Projet Fusée</h3>
+            <p>Simulation de fusée en Java : logique de lancement, états de vol et gestion d’événements avec une approche orientée objet.</p>
+            <ul class="tags"><li>Java</li><li>POO</li><li>Simulation</li></ul>
+            <a href="https://github.com/yaniscalo36-commits/Projet-JAVA" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
+          </div>
+        </article>
+
+        <!-- PENDU C -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb"><img src="images/pendu.png" alt="Capture du jeu du Pendu" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">B1</span>
+            <h3>Jeu du Pendu</h3>
+            <p>Le jeu du pendu en console, en C : entrées utilisateur, boucle de jeu, conditions et validation des lettres.</p>
+            <ul class="tags"><li>C</li><li>Compilé</li><li>Console</li></ul>
+            <a href="https://github.com/Redaskz/Langage-compil-" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
+          </div>
+        </article>
+
+        <!-- FORUM FOOT -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb"><img src="images/forum-foot.png" alt="Capture du forum de foot" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">B1 · Équipe</span>
+            <h3>Forum de Foot</h3>
+            <p>Forum communautaire autour du football : gestion des utilisateurs, création de posts, échanges entre membres et base de données.</p>
+            <ul class="tags"><li>Web</li><li>Base de données</li><li>Équipe</li></ul>
+            <a href="https://github.com/Redaskz/ProjJS.2-Forum" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
+          </div>
+        </article>
+
+        <!-- BDE YNOV -->
+        <article class="project-card" data-cat="b1">
+          <div class="project-thumb"><img src="images/bde-ynov.png" alt="Capture du site du BDE Ynov" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">B1 · Équipe</span>
+            <h3>Site BDE Ynov Toulouse</h3>
+            <p>Site du Bureau des Étudiants d’Ynov Toulouse pour présenter la vie étudiante, les événements et renforcer la communication.</p>
+            <ul class="tags"><li>Web</li><li>UI/UX</li><li>Équipe</li></ul>
+            <a href="https://github.com/maelleagondjodondia/Ynot-siteweb" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
+          </div>
+        </article>
+
+        <!-- B2 : à venir -->
+        <article class="project-card upcoming" data-cat="b2">
+          <div class="project-body">
+            <span class="project-year">B2 · 2026–2027</span>
+            <h3>Projets de B2</h3>
+            <p>Les projets de cybersécurité de cette année arrivent bientôt ici.</p>
+            <p class="mono loading">compiling<span>...</span></p>
+          </div>
+        </article>
+
+        <!-- PERSO : à venir -->
+        <article class="project-card upcoming" data-cat="perso">
+          <div class="project-body">
+            <span class="project-year">Perso</span>
+            <h3>Projets personnels</h3>
+            <p>Projets réalisés par curiosité ou pour progresser dans certains domaines — en cours de documentation.</p>
+            <p class="mono loading">loading<span>...</span></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="section-head center">
+        <span class="section-num">04.</span>
+        <h2>Contact</h2>
+      </div>
+
+      <p class="contact-lead">
+        Je recherche un <strong>stage en informatique / cybersécurité</strong> pour ma deuxième année,
+        avec en perspective une <strong>alternance en 3e année</strong>.
+      </p>
+
+      <div class="contact-grid">
+        <a class="contact-item" href="mailto:yanis.calonge@laposte.net">
+          <span class="mono">email</span>
+          <strong>yanis.calonge@laposte.net</strong>
+        </a>
+        <a class="contact-item" href="tel:+33749503177">
+          <span class="mono">tel</span>
+          <strong>07 49 50 31 77</strong>
+        </a>
+        <a class="contact-item" href="https://github.com/yaniscalo36-commits" target="_blank" rel="noopener">
+          <span class="mono">github</span>
+          <strong>yaniscalo36-commits</strong>
+        </a>
+        <div class="contact-item">
+          <span class="mono">loc</span>
+          <strong>Toulouse, France</strong>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <a href="mailto:yanis.calonge@laposte.net" class="btn btn-primary">Me contacter</a>
+        <a href="CV_Yanis_Calonge.pdf" download class="btn btn-ghost">Télécharger mon CV ↓</a>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    © 2026 Yanis Calonge — Portfolio Étudiant Informatique
+    <p><span class="mono">&lt;/&gt;</span> Conçu et développé par Yanis Calonge — <span id="year">2026</span></p>
   </footer>
 
-  <!-- Animation Scroll -->
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    document.querySelectorAll("section, .project-card, .skill-card").forEach(el => {
-      el.classList.add("hidden");
-      observer.observe(el);
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
