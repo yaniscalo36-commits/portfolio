@@ -1,0 +1,6 @@
+# Signaler une vulnérabilité sur ce site (RFC 9116).
+# Merci de me laisser le temps de corriger avant toute publication.
+Contact: mailto:yanis.calonge@laposte.net
+Expires: 2027-10-10T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://portfolio-ten-khaki-63.vercel.app/.well-known/security.txt
