@@ -416,3 +416,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Logs de démonstration de logsentry (adresses IP fictives, RFC 5737)
+!lab/logsentry/samples/*.log
