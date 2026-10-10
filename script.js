@@ -34,10 +34,10 @@ document.querySelectorAll("main section[id]").forEach(s => sectionObserver.obser
 
 /* ===== TEXTE TAPÉ ===== */
 const roles = [
-  "Étudiant en Cybersécurité",
+  "étudiant en cybersécurité",
   "Bachelor 2 — Ynov Toulouse",
-  "Réseaux · Systèmes · Dev",
-  "À la recherche d'un stage"
+  "réseaux · systèmes · développement",
+  "à la recherche d'un stage"
 ];
 const typed = document.getElementById("typed");
 
