@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>headscan · audit de sécurité en direct</title>
+  <meta name="description" content="Analysez les en-têtes de sécurité, les cookies et la configuration TLS d'un site web, et obtenez une note de A+ à F avec des conseils de correction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a href="/#projects" class="back">← Portfolio de Yanis Calonge</a>
+    <a href="https://github.com/yaniscalo36-commits/headscan" target="_blank" rel="noopener">Code source</a>
+  </header>
+
+  <main class="wrap">
+    <p class="tool">$ headscan --live</p>
+    <h1>Auditez la sécurité d'un site <span class="accent">en direct</span></h1>
+    <p class="lead">
+      Entrez l'adresse d'un site : headscan vérifie ses en-têtes de sécurité (CSP, HSTS…), ses cookies
+      et sa configuration TLS, puis lui donne une note de A+ à F avec des conseils de correction.
+    </p>
+
+    <form class="scan-form" id="form" novalidate>
+      <label for="url" class="sr-only">Adresse du site</label>
+      <input type="text" id="url" name="url" placeholder="exemple.com" autocomplete="url" spellcheck="false" autocapitalize="off" required maxlength="2048">
+      <button type="submit" class="btn btn-primary" id="go">Analyser</button>
+    </form>
+
+    <div class="examples">
+      <span>Essayer :</span>
+      <button type="button" data-url="portfolio-ten-khaki-63.vercel.app">ce portfolio</button>
+      <button type="button" data-url="github.com">github.com</button>
+      <button type="button" data-url="wikipedia.org">wikipedia.org</button>
+      <button type="button" data-url="http://neverssl.com">neverssl.com</button>
+    </div>
+
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+
+    <section class="result" id="result" hidden>
+      <div class="result-head">
+        <div>
+          <p class="final-url" id="final-url"></p>
+          <p class="meta" id="meta"></p>
+          <div class="pills" id="pills"></div>
+        </div>
+        <div class="grade" id="grade"><b id="grade-letter"></b><span id="grade-score"></span></div>
+      </div>
+      <div id="findings"></div>
+      <a class="btn btn-ghost btn-sm" id="dl-json" download="headscan.json">Télécharger le résultat (JSON)</a>
+    </section>
+
+    <aside class="note">
+      <strong>Usage responsable.</strong> headscan envoie une seule requête GET (plus une sur <code>http://</code> pour tester
+      la redirection), comme un navigateur, et ne tente aucune attaque. Pour éviter tout détournement, le service refuse les
+      adresses internes (localhost, réseaux privés, métadonnées cloud) et les ports autres que 80/443, et limite le nombre
+      d'analyses par visiteur.
+    </aside>
+  </main>
+
+  <footer class="foot">
+    headscan · projet personnel de <a href="/">Yanis Calonge</a> · moteur en Go, fonction serverless Vercel
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
