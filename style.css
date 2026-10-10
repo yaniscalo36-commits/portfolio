@@ -516,6 +516,17 @@ nav .num { font-family: var(--mono); font-size: 13px; color: var(--accent); }
 }
 .project-link:hover { color: var(--accent); }
 
+.project-links { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 18px; }
+.project-links .project-link { margin-top: 0; }
+.project-link.demo {
+  color: #04110d;
+  background: var(--accent);
+  border: 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.project-link.demo:hover { color: #04110d; box-shadow: 0 6px 18px -6px var(--accent-glow); }
+
 .project-card.upcoming {
   border-style: dashed;
   background: transparent;
