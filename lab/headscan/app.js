@@ -78,8 +78,8 @@ function show(r) {
 
   // Un code 4xx/5xx signifie souvent que le site bloque les robots : on analyse alors la page de refus.
   if (r.statusCode >= 400) {
-    els.httpNote.textContent = `Le site a répondu ${r.statusCode}${r.statusCode === 403 ? " (accès refusé)" : ""} : il bloque peut-être les outils automatiques. ` +
-      "L'analyse porte sur les en-têtes de cette réponse, qui sont en général les mêmes que pour un visiteur.";
+    els.httpNote.textContent = `Le site a répondu ${r.statusCode}${r.statusCode === 403 ? " (accès refusé)" : ""} : il bloque probablement les outils automatiques ` +
+      "(protection anti-robots, par exemple Cloudflare). L'analyse porte sur la page de refus, dont les en-têtes peuvent différer de ceux que reçoit un visiteur.";
     els.httpNote.hidden = false;
   } else {
     els.httpNote.hidden = true;
