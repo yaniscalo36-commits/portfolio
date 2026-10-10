@@ -104,7 +104,8 @@ yanis_calonge — B2 cybersécurité
           </p>
           <p>
             En parallèle des cours, je développe des projets personnels autour de ce thème,
-            comme <strong>headscan</strong>, un outil d'audit de sécurité web.
+            comme <strong>headscan</strong>, un outil d'audit de sécurité web, et <strong>logsentry</strong>,
+            un mini SIEM qui détecte les attaques dans les logs d'un serveur.
           </p>
 
           <div class="note">
@@ -351,6 +352,18 @@ yanis_calonge — B2 cybersécurité
             <p>Un auditeur de sécurité web en ligne de commande. Il vérifie les en-têtes HTTP (CSP, HSTS…), les cookies et TLS, puis donne une note de A+ à F avec des conseils. Il génère des rapports HTML et JSON, et peut bloquer un déploiement en CI. Je l'ai utilisé sur ce portfolio : il est passé de C à A+.</p>
             <ul class="tags"><li>Go</li><li>Sécurité web</li><li>TLS</li><li>CLI</li></ul>
             <a href="https://github.com/yaniscalo36-commits/headscan" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
+          </div>
+        </article>
+
+        <!-- LOGSENTRY -->
+        <article class="project-card" data-cat="perso">
+          <div class="project-thumb"><img src="images/logsentry.png" alt="Tableau de bord logsentry : alertes et chronologie des attaques" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-year">Perso · cybersécurité</span>
+            <h3>logsentry</h3>
+            <p>Un mini SIEM qui analyse les logs SSH et web d'un serveur. Il détecte le brute-force, les comptes compromis, les injections SQL, les XSS et les scans, avec la technique MITRE ATT&amp;CK correspondante et une recommandation de réponse. Il produit un tableau de bord HTML et un export JSON.</p>
+            <ul class="tags"><li>Go</li><li>Blue team</li><li>MITRE ATT&amp;CK</li><li>Analyse de logs</li></ul>
+            <a href="https://github.com/yaniscalo36-commits/logsentry" target="_blank" rel="noopener" class="project-link">Voir le code →</a>
           </div>
         </article>
 
