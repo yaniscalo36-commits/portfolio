@@ -138,3 +138,31 @@ resize();
 
 /* ===== FOOTER ===== */
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ===== E-MAIL : COPIE DE L'ADRESSE ===== */
+// Un lien mailto: ne fait rien si aucune messagerie n'est installée (cas fréquent avec Gmail
+// ou Outlook dans le navigateur). On copie donc aussi l'adresse et on le signale.
+const toast = document.getElementById("toast");
+let toastTimer;
+
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.hidden = false;
+  requestAnimationFrame(() => toast.classList.add("visible"));
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("visible");
+    setTimeout(() => { toast.hidden = true; }, 300);
+  }, 4000);
+}
+
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+  link.addEventListener("click", () => {
+    const email = link.getAttribute("href").replace("mailto:", "");
+    const fallback = () => showToast("Mon adresse : " + email);
+    if (!navigator.clipboard) return fallback();
+    navigator.clipboard.writeText(email)
+      .then(() => showToast("Adresse copiée : " + email))
+      .catch(fallback); // copie refusée par le navigateur : on affiche au moins l'adresse
+  });
+});

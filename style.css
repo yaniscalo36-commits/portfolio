@@ -659,3 +659,31 @@ a.contact-item:hover { border-color: var(--accent); transform: translateY(-3px);
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ===== E-MAIL ===== */
+.mail-alt {
+  max-width: 560px;
+  margin: 18px auto 0;
+  font-size: 14px;
+  color: var(--text-faint);
+}
+.mail-alt a { color: var(--accent); }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 200;
+  max-width: calc(100% - 32px);
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--bg-2);
+  color: var(--text);
+  font-size: 15px;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, .8);
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+}
+.toast.visible { opacity: 1; transform: translate(-50%, 0); }
